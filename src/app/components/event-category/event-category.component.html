@@ -1,0 +1,117 @@
+<nb-layout>
+  <nb-layout-header>
+    <nb-actions>
+      <nb-action icon="menu-outline"></nb-action>
+      <nb-action>A Point</nb-action>
+      <nb-action icon="search-outline"></nb-action>
+      <nb-action icon="person-outline"></nb-action>
+    </nb-actions>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <h3 class="header-col-title">
+      Search Event Category
+      <button (click)="resigterEventCategory" class="btn-new" size="medium" nbButton status="success">
+        New
+      </button>
+    </h3>
+
+    <nb-card accent="primary" [formGroup]="eventForm">
+      <nb-card-header>Event Category
+        <nb-action class="act-openCard">
+          <nb-icon *ngIf="!isCard" (click)="openCard()" icon="arrow-ios-downward-outline"></nb-icon>
+          <nb-icon *ngIf="isCard" (click)="openCard()" icon="arrow-ios-upward-outline"></nb-icon>
+        </nb-action>
+
+      </nb-card-header>
+      <nb-card-body *ngIf="!isCard" [formGroup]="eventForm">
+        <p>Name <span style="color: #ff0000">*</span></p>
+        <input type="text" nbInput fullWidth status="basic" placeholder="Name" formControlName="name" />
+
+        <!-- <p>Description</p>
+        <textarea formControlName="description" nbInput fullWidth placeholder="Description"></textarea> -->
+        <p>Active</p>
+        <nb-select formControlName="active_flag" fullWidth placeholder="Active">
+          <nb-option [value]="">None</nb-option>
+          <nb-option [value]="true">True</nb-option>
+          <nb-option [value]="false">False</nb-option>
+        </nb-select>
+        <!-- <div *ngFor="let event of event_category"></div> -->
+
+        <div class="btn-act">
+          <button class="btn-clear" size="medium" nbButton status="danger" (click)="resetSearchForm()">
+            Clear
+          </button>
+          <button class="btn-search" size="medium" nbButton status="success" (click)="searchEventCategory()">
+            Search
+          </button>
+        </div>
+      </nb-card-body>
+    </nb-card>
+
+    <nb-card>
+      <nb-card-header> EVENT CATEGORY </nb-card-header>
+      <nb-card-body>
+        <table id="customers" style="border-collapse: collapse">
+          <tr>
+            <th style="width: 120px">ACTION</th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>ACTIVE</th>
+          </tr>
+
+          <tr>
+            <th></th>
+
+            <th>
+              <form class="search-by" (keyup)="searchEventCategoryByName()" [formGroup]="eventForm">
+                <input type="text" formControlName="name" class="search-input" nbInput fullWidth fieldSize="small"
+                  placeholder="Search By Name" />
+              </form>
+            </th>
+
+            <th>
+              <form class="search-by" (keyup)="searchEventCategoryByName()" [formGroup]="eventForm">
+                <!-- <input formControlName="description" type="text" class="search-input" fullWidth nbInput
+                  fieldSize="small" placeholder="Search Description" /> -->
+                  <!-- <input formControlName="description" type="text" class="search-input" fullWidth nbInput
+                  fieldSize="small" placeholder="Search Description" /> -->
+              </form>
+            </th>
+
+            <th>
+              <form class="search-by" (mouseenter)="searchEventCategory()" [formGroup]="eventForm">
+                <nb-select formControlName="active_flag" fullWidth placeholder="Active">
+                  <nb-option [value]="">None</nb-option>
+                  <nb-option [value]="true">True</nb-option>
+                  <nb-option [value]="false">False</nb-option>
+                </nb-select>
+              </form>
+            </th>
+          </tr>
+
+          <tr *ngFor="let event of event_category">
+            <td>
+              <div class="atc-btn">
+                <nb-action (click)="editEventCategory(event._id)" class="act-icon">
+                  <nb-icon class="act-icon-edit" style="cursor: pointer" icon="edit-2-outline" size="tiny"
+                    status="success">
+                  </nb-icon>
+                </nb-action>
+                <nb-action class="atc-icon">
+                  <nb-icon class="act-icon-trash" style="cursor: pointer" icon="trash-2-outline" size="tiny"
+                    status="danger">
+                  </nb-icon>
+                </nb-action>
+              </div>
+            </td>
+            <td>{{ event.name }}</td>
+            <td>{{ event.description }}</td>
+            <td>{{ event.active_flag }}</td>
+          </tr>
+        </table>
+        <br />
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>

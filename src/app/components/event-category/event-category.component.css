@@ -1,0 +1,66 @@
+.header-title {
+  font-weight: 800;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.header-col-title {
+  text-align: center;
+}
+.btn-new{
+  float: right;
+}
+.act-openCard {
+  float: right;
+}
+.act-openCard:hover {
+  cursor: pointer;
+}
+.btn-clear {
+  margin-right: 10px;
+}
+.btn-act {
+  float: right;
+  margin-top: 20px;
+}
+
+.countPosts {
+  color: brown;
+  background-color: red;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  background-color: #fff;
+  color: black;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.act-icon{
+  margin:0 10px ;}
+
+.atc-btn{
+  display: flex;
+  padding: 0 10px;
+  /* flex-direction: column; */
+}
