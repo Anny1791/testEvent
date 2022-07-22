@@ -36,6 +36,7 @@ query(
       active:$ACTIVE_FLAG
       }){
     name
+    description
     active_flag
   }
 }
@@ -51,11 +52,16 @@ export class EventCategoryComponent implements OnInit {
   event_category: any[] = [];
   selectbyName= '';
 
+  active_flag = false;
+
+  toggle(active_flag: boolean) {
+    this.active_flag = active_flag;
+  }
 
   eventForm = this.formb.group({
     name: ['', Validators.required],
     description: [''],
-    active_flag: [null],
+    active_flag: [false],
   })
 
   constructor(
@@ -132,7 +138,6 @@ export class EventCategoryComponent implements OnInit {
         query: Get_searchEventCategory,
         variables: {
           NAME: this.eventForm.controls["name"].value,
-          DESCRIPTION: this.eventForm.controls["description"].value,
           ACTIVE_FLAG: this.eventForm.controls["active_flag"].value,
         },
       })

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbIconModule, NbInputModule, NbLayoutModule, NbSelectModule, NbSidebarModule, NbThemeModule, NbTreeGridModule} from '@nebular/theme';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
@@ -10,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EventCategoryComponent } from './components/event-category/event-category.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [AppComponent, EventCategoryComponent],
@@ -33,7 +35,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbInputModule,
     NbActionsModule,
     NbTreeGridModule,
-    NbCheckboxModule
+    NbCheckboxModule,
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],
