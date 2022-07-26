@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { Apollo, gql } from 'apollo-angular';
+import { LocalDataSource } from 'ng2-smart-table';
 
 const Get_getAllEventCategory = gql`
   query {
@@ -44,13 +46,24 @@ query(
 
 @Component({
   selector: 'app-event-category',
+
   templateUrl: './event-category.component.html',
+  //   template: `
+  //   <div class="d-flex flex-nowrap text-white">
+  //     <button type="button" class="btn btn-danger mr-2">
+  //       <i class="fas fa-trash-alt"></i>
+  //     </button>
+  //     <button type="button" class="btn btn-info">
+  //       <i class="fas fa-edit"></i>
+  //     </button>
+  //   </div>
+  // `,
   styleUrls: ['./event-category.component.css'],
 })
 export class EventCategoryComponent implements OnInit {
   isCard: boolean = false;
   event_category: any[] = [];
-  selectbyName= '';
+  selectbyName = '';
 
   active_flag = false;
 
@@ -69,7 +82,7 @@ export class EventCategoryComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private formb: FormBuilder
-  ) {}
+  ) { }
 
   openCard() {
     this.isCard = !this.isCard;
@@ -94,7 +107,7 @@ export class EventCategoryComponent implements OnInit {
   // clearEventCategoryForm() {
   //   this.eventForm.reset();
   // }
-  resetSearchForm(){
+  resetSearchForm() {
     this.eventForm.reset();
     this.eventForm.get('name')?.reset('');
     this.eventForm.get('description')?.reset('');
@@ -144,6 +157,35 @@ export class EventCategoryComponent implements OnInit {
         this.event_category = res?.data?.searchEventCategory;
       });
   }
+    settings = {
+      // add: {
+      //   addButtonContent: '<i class="nb-plus"></i>',
+      //   createButtonContent: '<i class="nb-checkmark"></i>',
+      //   cancelButtonContent: '<i class="nb-close"></i>',
+      // },
+      // edit: {
+      //   editButtonContent: '<i class="nb-edit"></i>',
+      //   saveButtonContent: '<i class="nb-checkmark"></i>',
+      //   cancelButtonContent: '<i class="nb-close"></i>',
+      // },
+      // delete: {
+      //   deleteButtonContent: '<i class="nb-trash"></i>',
+      //   confirmDelete: true,
+      // },
 
+      columns: {
+        name: {
+          title: 'Name',
+          type: 'string',
+        },
+        description: {
+          title: 'Description',
+          type: 'string',
+        },
+        active_flag: {
+          title: 'Active',
+          type: 'boolean',
+        },
+      },
+  };
 }
-

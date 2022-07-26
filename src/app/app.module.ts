@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbIconModule, NbInputModule, NbLayoutModule, NbSelectModule, NbSidebarModule, NbThemeModule, NbTreeGridModule} from '@nebular/theme';
@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EventCategoryComponent } from './components/event-category/event-category.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 
 @NgModule({
@@ -35,9 +36,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbActionsModule,
     NbTreeGridModule,
     NbCheckboxModule,
+    Ng2SmartTableModule,
 
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
