@@ -129,7 +129,6 @@ export class EventCategoryComponent implements OnInit {
       })
       .valueChanges.subscribe((res: any) => {
         this.event_category = res?.data?.getEventCategoryByName;
-        console.log('Search By Name: ', this.event_category);
       });
   }
   searchEventCategory() {
@@ -143,8 +142,8 @@ export class EventCategoryComponent implements OnInit {
       })
       .valueChanges.subscribe((res: any) => {
         this.event_category = res?.data?.searchEventCategory;
-        console.log('Search By Name: ', this.event_category);
       });
   }
 
 }
+

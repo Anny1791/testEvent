@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@ag-grid-community/core@^28.0.2":
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/@ag-grid-community/core/-/core-28.0.2.tgz#387db38de9c567cc0c969aaeddaf1968f013a2fe"
+  integrity sha512-RIg2BJ4iqSvh5bvWEXgPwdARjnOEkTuqQObSFmZp8tVi1a4tpnMKkgIqKO4pK5s1uUVI2bBkr30v2oirD0P32A==
+
+"@ag-grid-community/react@^28.0.0":
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/@ag-grid-community/react/-/react-28.0.0.tgz#4c406a262aebd07372848c5183fb36e5c69077d2"
+  integrity sha512-XtY7wKXgCOeq9bEwEQWwqb4HIMEd8wZPiKwDgQ9ys3A9BskQbEqySqRhKg2UJpDcZ3hDSY03vGq60tTwY/tGiA==
+  dependencies:
+    prop-types "^15.8.1"
+
 "@ampproject/remapping@2.2.0", "@ampproject/remapping@^2.1.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.2.0.tgz#56c133824780de3174aed5ab6834f3026790154d"
@@ -1871,6 +1883,13 @@ adjust-sourcemap-loader@^4.0.0:
   dependencies:
     loader-utils "^2.0.0"
     regex-parser "^2.2.11"
+
+ag-grid-react@^28.0.0:
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-28.0.0.tgz#f8774cbc8aeb20abbc507bc23fbdaaa987a52175"
+  integrity sha512-voKc4Q44YAVRZXUQeOPXfO049ak67t5AOy8RTjf1sIv9eZ9O6liVZzNjkWY3pel1cGgTMTqNPWSpQYxBhOe0UA==
+  dependencies:
+    prop-types "^15.8.1"
 
 agent-base@6, agent-base@^6.0.2:
   version "6.0.2"
@@ -4184,7 +4203,7 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==
 
-lodash@^4.17.10, lodash@^4.17.21:
+lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -4541,14 +4560,6 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
-
-ng2-smart-table@^1.7.2:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/ng2-smart-table/-/ng2-smart-table-1.7.2.tgz#227efacc243c6d0ba0281281c0841282a604d201"
-  integrity sha512-TwREaaTtgaPyxxocoxH4W4BQEpiuYhOhPxDOgR/+O36i7m61c0O+OWx2u7wSHU9UabdQDWwgWU6Eus2tOT3RJA==
-  dependencies:
-    lodash "^4.17.10"
-    tslib "^2.0.0"
 
 nice-napi@^1.0.2:
   version "1.0.2"
@@ -5348,7 +5359,7 @@ promise-retry@^2.0.1:
     err-code "^2.0.2"
     retry "^0.12.0"
 
-prop-types@^15.7.2:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
