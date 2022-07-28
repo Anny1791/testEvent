@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -158,21 +159,6 @@ export class EventCategoryComponent implements OnInit {
       });
   }
     settings = {
-      // add: {
-      //   addButtonContent: '<i class="nb-plus"></i>',
-      //   createButtonContent: '<i class="nb-checkmark"></i>',
-      //   cancelButtonContent: '<i class="nb-close"></i>',
-      // },
-      // edit: {
-      //   editButtonContent: '<i class="nb-edit"></i>',
-      //   saveButtonContent: '<i class="nb-checkmark"></i>',
-      //   cancelButtonContent: '<i class="nb-close"></i>',
-      // },
-      // delete: {
-      //   deleteButtonContent: '<i class="nb-trash"></i>',
-      //   confirmDelete: true,
-      // },
-
       columns: {
         name: {
           title: 'Name',
@@ -187,5 +173,19 @@ export class EventCategoryComponent implements OnInit {
           type: 'boolean',
         },
       },
-  };
-}
+      actions: {
+        custom: [
+          {
+            name: 'edit',
+            title:'<img src="assets/icons/nb-edit.svg" width="30" height="30" >',
+          },
+          {
+            name: 'delete',
+            title:'<img src="assets/icons/nb-trash.svg" width="30" height="30">'
+          }
+        ],
+        add: false,
+        edit: false,
+        delete: false
+  }
+    }}
